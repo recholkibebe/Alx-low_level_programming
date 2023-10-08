@@ -1,8 +1,8 @@
-# include <stdio.h>
+#include <stdio.h>
 /**
  * main -entry point to program.
  * Description -A program that prints the  size of various types on the computer it is compiled and run on.
- * Return 0 (success)
+ * Return: 0 always to indicate success.
  */
 int main(void)
 {
@@ -11,6 +11,7 @@ long int b;
 long long int c;
 float d;
 char e;
+
 printf("Size of a char: %u byte(s)\n", sizeof(e));
 printf("Size of an int: %u byte(s)\n", sizeof(a));
 printf("Size of a long int: %u byte(s)\n", sizeof(b));
