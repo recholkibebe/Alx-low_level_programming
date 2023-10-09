@@ -1,0 +1,2 @@
+#!/bin/bash
+touch ${CFILE%.c}.s | gcc -S -masm=intel $CFILE
