@@ -1,74 +1,39 @@
+#include <stdlib.h>
 #include <stdio.h>
-#include "main.h"
 
 /**
- * _atoi - converts a string to an integer
- * @s: string to be converted
+ * main - program that prints all arguments it receives
+ * @argc: argument count
+ * @argv: argunment vector
  *
- * Return: the int converted from the string
+ * Return: int
  */
-int _atoi(char *s)
-{
-	int i, d, n, len, f, digit;
 
-	i = 0;
-	d = 0;
-	n = 0;
-	len = 0;
-	f = 0;
-	digit = 0;
-
-	while (s[len] != '\0')
-	len++;
-
-	while (i < len && f == 0)
-	{
-	if (s[i] == '-')
-	++d;
-
-
-	if (s[i] >= '0' && s[i] <= '9')
-	{
-	digit = s[i] - '0';
-	if (d % 2)
-	digit = -digit;
-	n = n * 10 + digit;
-	f = 1;
-	if (s[i + 1] < '0' || s[i + 1] > '9')
-	break;
-	f = 0
-	}
-	i++;
-	}
-
-	if (f == 0)
-	return (0)
-
-	return (n);
-}
-
-/**
- * main - multiplies two numbers
- * @argc: number of arguments
- * @argv: array of arguments
- *
- * Return: 0 (Success), 1 (Error)
- */
 int main(int argc, char *argv[])
+{
+	int count, num1, num2, res;
+
+	count = num1 = num2 = res = 0;
+	if (argc > 0)
 	{
-	int result, num1, n
-
-
-	if (argc != 3) /* Check if exactly 3 arguments are provided */
-
-	printf("Error\n");  /* Add a semicolon here */
-	return (1);
+		while (count < argc)
+		{
+			if (argc == 3)
+			{
+				if (count == 1)
+					num1 = atoi(argv[count]);
+				else if (count == 2)
+					num2 = atoi(argv[count]);
+			}
+			else
+			{
+				printf("Error\n");
+				return (1);
+			}
+			res = (num1 * num2);
+			count++;
+		}
+		printf("%d\n", res);
 	}
-	num1 = _atoi(argv[1]);
-
-	num2 = _atoi(argv[2]);
-	result = num1 * num2;
-
-	printf("%d\n", result);
-			return (0);
-	}
+	return (0);
+}
